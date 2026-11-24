@@ -1,0 +1,30 @@
+name: SHSellMenu
+version: '${project.version}'
+main: org.Cry_Legende.sHSellMenu.SHSellMenu
+api-version: '1.21'
+author: Cry_Legende
+description: Menu de vente pour ShopGUIPlus, ouvert par /sell sans argument.
+depend: [ShopGUIPlus]
+softdepend: [SHInventoryPages]
+
+commands:
+  vendre:
+    description: Ouvre le menu de vente.
+    usage: /<command>
+  shsellmenu:
+    description: Administration de SHSellMenu.
+    usage: /<command> reload
+    permission: shsellmenu.admin.reload
+
+permissions:
+  shsellmenu.use:
+    description: Ouvrir le menu de vente (/sell sans argument, /vendre).
+    default: true
+  shsellmenu.admin:
+    description: Toute l'administration de SHSellMenu.
+    default: op
+    children:
+      shsellmenu.admin.reload: true
+  shsellmenu.admin.reload:
+    description: Recharger config.yml et messages.yml (/shsellmenu reload).
+    default: op

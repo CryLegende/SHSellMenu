@@ -1,0 +1,61 @@
+# Messages de SHSellMenu. Couleurs : codes & et &#RRGGBB. Un message vide ("") n'est pas envoyé.
+
+# Commun
+player-only: "&7&l« &c&lSH &8&l» &7Cette commande est réservée aux &cjoueurs&7."
+no-permission: "&8&l« &f&lSH &8&l» &fCommande inconnue, essayer autre chose."
+reloaded: "&7&l« &a&lSH &8&l» &7Configuration et messages &arechargés&7."
+# %file% = fichier illisible, %error% = cause
+reload-error: "&7&l« &c&lSH &8&l» &cRechargement annulé&7, l'ancienne configuration reste active. &f%file% &7: &c%error%"
+# %subcommands% = sous-commandes que l'expéditeur peut utiliser
+admin-usage: "&7&l« &e&lSH &8&l» &7Utilisation : &e/shsellmenu <%subcommands%>&7."
+
+# Sommes : %amount% (nombre formaté), %currency% (nom de la monnaie de la boutique ; DEFAULT = monnaie par défaut de
+# ShopGUIPlus, la première de economyTypes)
+price: "%amount% %currency%"
+currency-DEFAULT: "SHCoins"
+currency-VAULT: "SHCoins"
+currency-PLAYER_POINTS: "points"
+currency-EXP: "XP"
+
+# Vente : %quantity% = objets vendus, %price% = somme gagnée
+sold: "&7&l« &a&lSH &8&l» &7Vous vendez &a%quantity% &7objet(s) pour &a%price%&7."
+# %quantity% = objets rendus
+left: "&7&l« &e&lSH &8&l» &e%quantity% &7objet(s) ne se vendent pas et vous sont rendus."
+unavailable-here: "&7&l« &c&lSH &8&l» &7Vous ne pouvez pas &cvendre &7ici."
+loading: "&7&l« &e&lSH &8&l» &7Vos données de boutique sont en cours de &echargement&7, réessayez dans un instant."
+error: "&7&l« &c&lSH &8&l» &7La vente a été &cinterrompue &7par une erreur, prévenez le staff."
+
+# Menu
+menu-title: "&8&lMenu &8| Vente"
+# Lignes ajoutées sous la description d'un objet déposé : %price% = ce que rapporte cette pile
+stack-lore:
+  - ""
+  - "&7&l« &a&lVente &8| &a%price% &8&l»"
+# Objet déposé qui ne se vend pas
+unsellable-lore:
+  - ""
+  - "&7&l« &c&lNe se vend pas &8&l»"
+# Bouton qui vend : %total% = ce que rapporte tout ce qui est déposé
+confirm-name: "&a&lTout vendre"
+confirm-lore:
+  - ""
+  - "&7&l« &a&lTotal &8| &a%total% &8&l»"
+  - ""
+  - "&8&o(( &a&oCliquez ou fermez pour vendre &8&o))"
+# Le même bouton tant que rien de vendable n'est déposé
+empty-name: "&7&lTout vendre"
+empty-lore:
+  - ""
+  - "&7Déposez vos objets dans ce menu,"
+  - "&7leur prix s'affiche aussitôt."
+# Bouton qui rend tout
+cancel-name: "&c⤾ Tout reprendre &7(Clic)"
+cancel-lore: []
+
+# Bouton « Confirmer » du menu de quantité de ShopGUIPlus, à la vente ("" = garder le nom de ShopGUIPlus)
+amount-sell-name: ""
+amount-sell-lore:
+  - ""
+  - "&7Vendre le nombre sélectionné ?"
+  - ""
+  - "&8&o(( &a&oCliquez pour vendre &8&o))"

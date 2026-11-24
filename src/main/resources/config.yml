@@ -1,0 +1,54 @@
+# SHSellMenu
+#
+# Menu de vente pour ShopGUIPlus. Le joueur y dépose ses objets, voit ce que rapporte chaque pile et le total, puis vend
+# en fermant le menu ou en cliquant sur le bouton. Prix, multiplicateurs, journal shop.log et événements de vente sont
+# ceux de ShopGUIPlus. Un objet qui ne se vend pas est rendu. Le menu fermé par une mort, une déconnexion, une
+# téléportation ou un arrêt du serveur rend tout sans vendre.
+#
+#   /sell                 (sans argument) Ouvre le menu de vente. /sell hand, /sell all... ne changent pas.
+#   /vendre               Ouvre le menu de vente.
+#   /shsellmenu reload    Recharge config.yml et messages.yml. Un fichier illisible annule le rechargement.
+#
+# Permissions :
+#   shsellmenu.use           ouvrir le menu (tous par défaut)
+#   shsellmenu.admin         toute l'administration, parent de la suivante (op par défaut)
+#   shsellmenu.admin.reload  /shsellmenu reload (op par défaut)
+#
+# Les textes sont dans messages.yml.
+
+# Commandes d'autres plugins qui ouvrent le menu quand un joueur les tape seules, sans argument (sans le /)
+open-commands:
+  - sell
+  - ssell
+  - shopguiplus:sell
+
+menu:
+  # Lignes du menu, de 2 à 6 : la dernière porte les boutons, les autres reçoivent les objets
+  rows: 6
+  # Vrai : fermer le menu vend. Faux : fermer le menu rend les objets, seul le bouton vend.
+  sell-on-close: true
+  # Objet des cases vides de la dernière ligne ("" = rien)
+  filler: BLACK_STAINED_GLASS_PANE
+  # Bouton qui vend. column : colonne de la dernière ligne, de 1 à 9
+  confirm:
+    column: 5
+    material: LIME_DYE
+    # Objet du bouton tant que rien de vendable n'est déposé
+    material-empty: GRAY_DYE
+  # Bouton qui rend tout sans vendre
+  cancel:
+    column: 1
+    material: PAPER
+
+# Menu de quantité de ShopGUIPlus (clic droit sur un objet du /shop)
+amount-menu:
+  # Vrai : à la vente, le bouton « Confirmer » prend les textes amount-sell-* de messages.yml
+  sell-text: true
+
+# Sons : clé du jeu ("minecraft:ui.button.click") ; "" = aucun son. Le son de vente est celui de ShopGUIPlus.
+sounds:
+  open: "minecraft:ui.button.click"
+
+# Affichage des sommes : motif Java DecimalFormat et langue des séparateurs (en : 1,088.5 ; fr : 1 088,5)
+price-format: "#,##0.##"
+number-locale: "en"
