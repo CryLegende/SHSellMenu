@@ -3,6 +3,7 @@ package org.Cry_Legende.sHSellMenu;
 import org.Cry_Legende.sHSellMenu.menu.SellMenus;
 import org.Cry_Legende.sHSellMenu.pages.PagesLink;
 import org.Cry_Legende.sHSellMenu.shop.AmountMenuText;
+import org.Cry_Legende.sHSellMenu.shop.MainMenuPlaceholders;
 import org.Cry_Legende.sHSellMenu.shop.ShopBridge;
 import org.Cry_Legende.sHSellMenu.util.ConfigFiles;
 import org.Cry_Legende.sHSellMenu.util.Texts;
@@ -28,7 +29,10 @@ import java.util.Map;
 import java.util.Set;
 import java.util.logging.Level;
 
-/** Menu de vente pour ShopGUIPlus : /sell sans argument (et /vendre) ouvre un menu où l'on dépose ses objets. */
+/**
+ * Menu de vente pour ShopGUIPlus : /sell sans argument (et /vendre) ouvre un menu où l'on dépose ses objets. Retouche
+ * aussi deux menus de ShopGUIPlus : le texte du bouton de vente du menu de quantité, les placeholders du menu principal.
+ */
 public final class SHSellMenu extends JavaPlugin implements Listener {
 
     public static final String USE_PERMISSION = "shsellmenu.use";
@@ -57,6 +61,8 @@ public final class SHSellMenu extends JavaPlugin implements Listener {
         getServer().getPluginManager().registerEvents(this, this);
         AmountMenuText amountMenu = AmountMenuText.open(this);
         if (amountMenu != null) getServer().getPluginManager().registerEvents(amountMenu, this);
+        MainMenuPlaceholders mainMenu = MainMenuPlaceholders.open(this);
+        if (mainMenu != null) getServer().getPluginManager().registerEvents(mainMenu, this);
         registerCommands();
     }
 

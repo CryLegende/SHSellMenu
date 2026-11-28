@@ -4,6 +4,8 @@
 # en fermant le menu ou en cliquant sur le bouton. Prix, multiplicateurs, journal shop.log et événements de vente sont
 # ceux de ShopGUIPlus. Un objet qui ne se vend pas est rendu. Le menu fermé par une mort, une déconnexion, une
 # téléportation ou un arrêt du serveur rend tout sans vendre.
+# Retouche aussi deux menus de ShopGUIPlus : le bouton de vente du menu de quantité (amount-menu) et les placeholders
+# de PlaceholderAPI du menu principal (main-menu).
 #
 #   /sell                 (sans argument) Ouvre le menu de vente. /sell hand, /sell all... ne changent pas.
 #   /vendre               Ouvre le menu de vente.
@@ -44,6 +46,12 @@ menu:
 amount-menu:
   # Vrai : à la vente, le bouton « Confirmer » prend les textes amount-sell-* de messages.yml
   sell-text: true
+
+# Menu principal de ShopGUIPlus (/shop, bouton Retour d'une boutique)
+main-menu:
+  # Vrai : les placeholders de PlaceholderAPI du nom et de la description des objets (shopMenuItems de la config de
+  # ShopGUIPlus) sont remplacés pour le joueur qui ouvre le menu. Les codes & et &#RRGGBB du résultat sont lus.
+  placeholders: true
 
 # Sons : clé du jeu ("minecraft:ui.button.click") ; "" = aucun son. Le son de vente est celui de ShopGUIPlus.
 sounds:

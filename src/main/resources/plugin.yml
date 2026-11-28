@@ -3,9 +3,9 @@ version: '${project.version}'
 main: org.Cry_Legende.sHSellMenu.SHSellMenu
 api-version: '1.21'
 author: Cry_Legende
-description: Menu de vente pour ShopGUIPlus, ouvert par /sell sans argument.
+description: Menu de vente pour ShopGUIPlus, ouvert par /sell sans argument, et placeholders du menu principal de ShopGUIPlus.
 depend: [ShopGUIPlus]
-softdepend: [SHInventoryPages]
+softdepend: [SHInventoryPages, PlaceholderAPI]
 
 commands:
   vendre:

@@ -20,13 +20,14 @@
 - **Les ventes sont celles de ShopGUIPlus** : mêmes prix, multiplicateurs, monnaies, accès aux boutiques, événements de transaction, journal `shop.log`, sons et commandes de vente.
 - **Aucun objet modifié** : le menu n'affiche que des copies, les vrais objets restent à part. Une mort, une déconnexion, une téléportation, un autre menu ou un arrêt du serveur rend tout sans vendre.
 - **Menu de quantité de ShopGUIPlus** : son bouton « Confirmer » n'a qu'un texte pour l'achat et la vente. À la vente, il prend celui de `messages.yml`.
+- **Menu principal de ShopGUIPlus** : ShopGUIPlus ne lit pas PlaceholderAPI. À l'ouverture du menu principal (`/shop`, bouton Retour d'une boutique), les placeholders du nom et de la description des objets de `shopMenuItems` sont remplacés pour le joueur. Un bouton peut donc afficher un classement, un solde ou un compteur sans remplacer ce menu par un autre plugin.
 
 Utilisé sur : **Opale**.
 
 ## Dépendances
 
 - Obligatoire : `ShopGUIPlus` (1.113)
-- Optionnelle : `SHInventoryPages` (les objets rendus vont dans les autres pages si l'inventaire est plein, sinon au sol)
+- Optionnelles : `SHInventoryPages` (les objets rendus vont dans les autres pages si l'inventaire est plein, sinon au sol), `PlaceholderAPI` (placeholders du menu principal de ShopGUIPlus)
 
 La vente (`ShopManager#handleItemSell`) et les réglages `Settings` de ShopGUIPlus ne font pas partie de son API publiée : ils sont résolus au démarrage. Si une mise à jour de ShopGUIPlus les a changés, le plugin se désactive avec un message dans la console.
 

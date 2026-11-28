@@ -6,7 +6,7 @@
 
     <groupId>org.Cry_Legende</groupId>
     <artifactId>SHSellMenu</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <packaging>jar</packaging>
 
     <name>SHSellMenu</name>
@@ -52,6 +52,10 @@
             <url>https://repo.papermc.io/repository/maven-public/</url>
         </repository>
         <repository>
+            <id>placeholderapi</id>
+            <url>https://repo.extendedclip.com/content/repositories/placeholderapi/</url>
+        </repository>
+        <repository>
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
         </repository>
@@ -70,7 +74,13 @@
             <version>3.0.0</version>
             <scope>provided</scope>
         </dependency>
-        <!-- Facultatif à l'exécution (softdepend) -->
+        <!-- Facultatifs à l'exécution (softdepend) -->
+        <dependency>
+            <groupId>me.clip</groupId>
+            <artifactId>placeholderapi</artifactId>
+            <version>2.11.6</version>
+            <scope>provided</scope>
+        </dependency>
         <dependency>
             <groupId>org.Cry_Legende</groupId>
             <artifactId>SHInventoryPages</artifactId>
